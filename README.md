@@ -4,8 +4,9 @@ This is the code used for the study of social proximity cues in language generat
 The study was accepted for publication at TEICAI@EACL2024 workshop and will be presented in Maltta on March 22.
 Workshop website: https://sites.google.com/view/teicai2024/
 
-Publication title: Non-Referential Functions of Language in Social Agents: The Case of Social Proximity
-Author: Dr. Sviatlana Höhn (LuxAI S. A. Luxembourg, Luxembourg)
+Publication title: Non-Referential Functions of Language in Social Agents: The Case of Social Proximity.
+
+Author: Dr. Sviatlana Höhn (LuxAI S. A. Luxembourg, Luxembourg).
 
 ## Prerequisites
 
