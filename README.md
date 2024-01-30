@@ -32,3 +32,5 @@ If you run this code multiple times, it will try to use a local copy of the vect
 ## Data analysed in the publication
 
 The folder `dialogues` contains the generated dialogues between artificial characters used for the analysis in the paper. 
+
+Note: the code provided here will produce JSON files instead of TXT, as it was in the earlier version of the program. The code will not re-generate exactly the same dialogues as in the `dialogues` folder because language generation is non-deterministic. 
