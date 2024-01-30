@@ -48,15 +48,5 @@
         "jazz":"Will you play some music today?",
         "heli":"Do you still have your old helicopter?",
         "closing":"I need to go. I wish you a nice party and a good time with your friends and family. Good bye, Mr Thornton!"
-    },
-    {
-        "type":"Ali",
-        "greeting":"Hi Mr Thornton!",
-        "congrats":"Happy birthday to you!",
-        "tellStory":"Tell me a story about that big fish!",
-        "exaggerate":"Last time the story had a different end!",
-        "jazz":"Will you play some music today?",
-        "heli":"Do you still have your old helicopter?",
-        "closing":"It was great to see you Mr. Thornton! I need to go home. Bye!"
     }
 ]
