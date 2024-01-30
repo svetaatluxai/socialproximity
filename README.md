@@ -10,13 +10,13 @@ Author: Dr. Sviatlana Höhn (LuxAI S. A. Luxembourg, Luxembourg)
 ## Prerequisites
 
 Install the following libraries first:
-langchain
-langchain_community
-langchain-openai
-openai
-unstructured
-tiktoken
-faiss-cpu 
+- langchain
+- langchain_community
+- langchain-openai
+- openai
+- unstructured
+- tiktoken
+- faiss-cpu 
 
 You will need your OpenAI API access token to run this code. 
 
