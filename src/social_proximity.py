@@ -13,9 +13,9 @@ class SocialProximity:
         self.knowledge = "./data"# 1) specify the source of data 
         self.vectorised_knowledge = "knowledge_vs"#vector store of factual knowledge
         self.vectorised_memory = "memory_vs"#vector store of summaries of past conversations
-        openaikey=open("key.txt", 'r').read().strip()
+        openaikey=open("key.txt", 'r').read().strip()#better export variable
         self.embeddings_model = OpenAIEmbeddings(openai_api_key=openaikey)
-        self.client = OpenAI(api_key = open("key.txt", 'r').read().strip())#better export variable
+        self.client = OpenAI(api_key = openaikey)
         self.loader=DirectoryLoader
         self.messages =[]
         self.messagesNoRAG=[]
@@ -67,7 +67,6 @@ class SocialProximity:
         context=""
         docs = vectorstore_obj.similarity_search(query)
         context=docs[0].page_content
-        print("retrieved context ", context)
         return context
     
     def create_new_vectorstore(self, vectorstore_name):
@@ -81,7 +80,6 @@ class SocialProximity:
     def initialize_messages(self, identityprompt, userprompt, messages):
         messages=[]
         messages.append({"role": "system", "content": identityprompt + "You are talking to " + userprompt + " Respond to "+ userprompt})
-        print(messages)
         return messages
     
 
@@ -93,7 +91,6 @@ class SocialProximity:
             sysmess=sysmess+"<CONTEXT>"+context+"<END CONTEXT>"+ " Do not use lists in responses."
         else:
             sysmess=self.cp.sub("<CONTEXT>"+context+"<END CONTEXT>",sysmess)
-        print("SYSMESSAGE:\n ",sysmess)
         return sysmess
     
     def count_tokens(self, messages, model="gpt-3.5-turbo-0613"):
@@ -123,9 +120,8 @@ class SocialProximity:
         print("Tokens: ", self.count_tokens(self.messages))
         # check max_tokens, remove the oldest turn if too long
         while self.count_tokens(self.messages)>self.maxtokens:
-            print("Message too long")
+            print("Messages too long")
             self.messages.pop(1)
-        #print(self.messages)
         response= self.client.chat.completions.create(
             model="gpt-3.5-turbo",
             max_tokens=250,
@@ -134,7 +130,6 @@ class SocialProximity:
         chatmessage = response.choices[0].message
         messagetext=chatmessage.content
         self.messages.append({"role":"assistant","content":messagetext})
-        #print(messagetext)
         return messagetext
     
     #generate response without RAG and update dialogue history
@@ -142,9 +137,8 @@ class SocialProximity:
         self.messagesNoRAG.append({"role": "user", "content": prompt})
         print("Tokens no RAG: ", self.count_tokens(self.messagesNoRAG))
         while self.count_tokens(self.messagesNoRAG)>self.maxtokens:
-            print("Message too long")
+            print("Messages too long")
             self.messagesNoRAG.pop(1)
-        #print(self.messages)
         response= self.client.chat.completions.create(
             model="gpt-3.5-turbo",
             max_tokens=250,
@@ -153,7 +147,6 @@ class SocialProximity:
         chatmessage = response.choices[0].message
         messagetext=chatmessage.content
         self.messagesNoRAG.append({"role":"assistant","content":messagetext})
-        #print(messagetext)
         return messagetext
     
     def load_personas(self, configfile):
@@ -169,7 +162,6 @@ class SocialProximity:
             if "type" in a.keys():
                 if a["type"]==who:
                     script=a
-        print(a, " ------ from script")
         return script
     
     
@@ -184,24 +176,18 @@ if __name__ == "__main__":
         knowledge=sp.create_new_vectorstore("knowledge_faiss")
     personas=sp.load_personas(sp.personas_config)
     for p in personas:
-        print(p["who"])
         who=p["who"]
-        print(p["prompt"])
         userprompt=p["prompt"]
         script=sp.load_script_for_persona(who, sp.script_file)
-        print(script)
         sp.messages=sp.initialize_messages(identityprompt, userprompt,sp.messages)
         sp.messagesNoRAG=sp.initialize_messages(identityprompt, userprompt,sp.messagesNoRAG)
         writefile="dialogues/talk-"+who+"-01.json"
         writefilenorag="dialogues/talkNoRAG-"+who+"-01.json"
         keys=script.keys()
-        print(keys)
         print("NEW DIALOGUE")
         for k in keys:
-            print("KEY: ",k)
             if k!="type":
                 response=sp.get_response(script[k], sp.retrieve_context(script[k], knowledge))
-                #print(response)
                 responseNR=sp.get_responseNoRAG(script[k])
         print("Done!")
         with open(writefile, "w", encoding='utf8') as wf:
@@ -210,4 +196,4 @@ if __name__ == "__main__":
         with open(writefilenorag, "w", encoding='utf8') as wfn:
             output=json.dumps(sp.messagesNoRAG, indent=4, ensure_ascii=False,)
             wfn.write(output)
-    print("completed")
+    print("All dialogues completed")
