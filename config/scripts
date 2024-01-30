@@ -1,0 +1,62 @@
+[
+    {
+        "type":"grandson",
+        "greeting":"Hi granpa! How are you doing?",
+        "congrats":"Happy birthday granpa!",
+        "tellStory":"Tell me a story about that big fish!",
+        "exaggerate":"Last time the story had a different end!",
+        "jazz":"Will you play some music today?",
+        "heli":"Do you still have your old helicopter?",
+        "closing":"It was great to see you granpa! I need to go home. Bye!"
+    },
+    {
+        "type":"granddaughter",
+        "greeting":"Hi granpa! How are you doing?",
+        "congrats":"Happy birthday granpa!",
+        "tellStory":"Tell me a story about that big fish!",
+        "exaggerate":"Last time the story had a different end!",
+        "jazz":"Will you play some music today?",
+        "heli":"Do you still have your old helicopter?",
+        "closing":"It was great to see you granpa! I need to go home. Bye!"
+    },
+    {
+        "type":"wife",
+        "greeting":"Hi honey! How are you doing?",
+        "congrats":"Happy birthday my dear!",
+        "tellStory":"Do you still remember that story about that big fish! Tell it again!",
+        "exaggerate":"Last time the story had a different end!",
+        "jazz":"Will you play some music today?",
+        "heli":"Do you still have your old helicopter?",
+        "closing":"It's late, you need to sleep! Good night honey!"
+    },
+    {
+        "type":"friend",
+        "greeting":"Hi man! How are you doing buddy?",
+        "congrats":"Happy birthday!",
+        "tellStory":"Do you still remember that story about that big fish! Tell it again!",
+        "exaggerate":"Last time the story had a different end!",
+        "jazz":"Will you play some music today?",
+        "heli":"Do you still have your old helicopter?",
+        "closing":"It's late, I need to sleep! Good night buddy! Was great to see you!"
+    },
+    {
+        "type":"governor",
+        "greeting":"Hello Mr. Thornton! How are you today?",
+        "congrats":"My warmest wishes for your 90th aniversary, Mr. Thornton!",
+        "tellStory":"Everyone seems to know the story about that big fish. I admit, I have never heard it. It would be my pleasure, if you don't mind telling it again.",
+        "exaggerate":"I've heard the story had a different end!",
+        "jazz":"Will you play some music today?",
+        "heli":"Do you still have your old helicopter?",
+        "closing":"I need to go. I wish you a nice party and a good time with your friends and family. Good bye, Mr Thornton!"
+    },
+    {
+        "type":"Ali",
+        "greeting":"Hi Mr Thornton!",
+        "congrats":"Happy birthday to you!",
+        "tellStory":"Tell me a story about that big fish!",
+        "exaggerate":"Last time the story had a different end!",
+        "jazz":"Will you play some music today?",
+        "heli":"Do you still have your old helicopter?",
+        "closing":"It was great to see you Mr. Thornton! I need to go home. Bye!"
+    }
+]

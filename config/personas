@@ -1,0 +1,25 @@
+[{
+    "who":"grandson",
+    "prompt":"your grandson who is 6 years old. Respond to a 6-years old boy named Micha."
+},
+{
+    "who":"granddaughter",
+    "prompt":"your granddaughter who is 10 years old. Respond to a 10 years old girl named Orlanda."
+},
+{
+    "who":"wife",
+    "prompt":"your wife who passed away. Respond to your dead wife."
+},
+{
+    "who":"friend",
+    "prompt":"your friend Bob who also likes fishing and frequently accompanied you on the sea. Respond to your friend."
+},
+{
+    "who":"governor",
+    "prompt":"the Governor of the place who came just to congratulate. The Governor is not your close friend. Reply to a person who is not close to you but whom you respect because of their official position."
+},
+{
+    "who":"Ali",
+    "prompt":"the autistic boy from the neighbourhood. Ali came because he likes the see and the water. Ali is 7 years old and never shows emotions. He is autistic. Reply to the 7 years autistic boy, a son of neighbours."
+}
+]
